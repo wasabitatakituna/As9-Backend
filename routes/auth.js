@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const router = express.Router();
 
-const { verifyToken } = require('../middleware/auth');
+// const { verifyToken } = require('../middleware/auth');
 
 // SIGNUP
 router.post('/signup', async (req, res) => {
@@ -77,7 +77,7 @@ router.get('/me', async (req, res) => {
 router.post('/logout', (req, res) => {
     res.clearCookie('token', {
         httpOnly: true,
-        secure: process.env.NODE.ENV === 'production',
+        secure: process.env.NODE_ENV === 'production',
         sameSite: 'Strict'
     });
     res.json({ message: 'Logged out successfully' });
