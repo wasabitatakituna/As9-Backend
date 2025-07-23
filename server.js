@@ -20,15 +20,15 @@ app.use(cookieParser());
 // app.use(cors());
 
 // 2.
-// app.use(cors(
-//     { 
-//         origin: 'http://localhost:5173',
-//         credentials: true
-//     }
-// ));
+app.use(cors(
+    { 
+        origin: 'http://localhost:5173',
+        credentials: true
+    }
+));
 
 // 3.
-app.use(cors({ origin: 'https://<your-vercel-app>.vercel.app', credentials: true }));
+//app.use(cors({ origin: 'https://<your-vercel-app>.vercel.app', credentials: true }));
 
 app.use(express.json());
 app.use('/flights', flightsRouter);

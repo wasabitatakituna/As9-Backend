@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
 });
 
 // Get current user
-router.get('/me', verifyToken, async (req, res) => {
+router.get('/me', async (req, res) => {
     // const token = req.headers.authorization?.split(' ')[1];
     const token = req.cookies.token;
     if (!token) return res.status(401).json({ error: 'Missing token' });
